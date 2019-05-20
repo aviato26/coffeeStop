@@ -1,0 +1,72 @@
+
+@import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap');
+
+html {
+  width: 100%
+}
+
+#cutoutCup {
+  margin: auto;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+}
+
+#backPic {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+h1{
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: 'Tangerine', cursive;
+  font-size: 4em;
+  border: 2px solid white;
+  width: 15%
+}
+
+#menu {
+  width:100%;
+  height: 100%;
+  z-index: 3;
+  position: relative;
+  background: linear-gradient(#333366, #660033);
+}
+
+#menu-container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+
+article {
+  text-align: center;
+}
+
+@keyframes yAxis {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(50%);
+  }
+}
+
+.imgContainer {
+  width: 25%;
+  height: 45%;
+  border: 2px solid white;
+  border-radius: 20px;
+  color: white;
+}
+
+img {
+  margin: auto;
+}
