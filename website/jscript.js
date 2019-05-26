@@ -5,7 +5,6 @@
   window.addEventListener('scroll', () => {
     backlayer.style.transform = `scale(${1 + window.scrollY * 0.00100})`
     pics.changeAxis()
-    console.log(pics.menuPics[1].style.transform)
   })
 
 // menu animations
@@ -16,14 +15,33 @@ let pics = {
   changeAxis: function(){
     this.menuPics.forEach((c, i) => {
       if(window.scrollY > window.innerHeight / 3 && i % 2 === 0){
-        if(window.scrollY / 9 <= 50.0){
-          c.style.animation = 'yAxis'
-        }
+        c.className = 'imgContainer ascendAnimation'
       } else if(window.scrollY > window.innerHeight / 3 && i % 2 !== 0){
-        if(Math.abs(window.scrollY / 10 - 100) > 50){
-          c.style.transform = `translateY(${Math.abs(window.scrollY / 10 - 100)}%)`
+        c.className = 'imgContainer descendAnimation'
+      } else {
+        if(i % 2 !== 0){
+          c.className = 'imgContainer evenImgContainer'
+        } else if(c.className === 'imgContainer ascendAnimation'){
+          c.className = 'imgContainer backToStart'
         }
       }
     })
+  },
+  clickEvents: function(){
+    let notActive;
+
+    this.menuPics.forEach((c, i) => {
+      c.addEventListener('click', (e) => {
+        this.menuPics.forEach((c, i) => {
+          if(c.className.indexOf('active')){
+            notActive = c.className.replace(' active', '')
+            c.className = notActive
+          }
+        })
+        c.className += ' active'
+      })
+    })
   }
 }
+
+pics.clickEvents()

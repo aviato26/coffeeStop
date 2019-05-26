@@ -50,7 +50,7 @@ article {
   text-align: center;
 }
 
-@keyframes yAxis {
+@keyframes yAxisUp {
   from {
     transform: translateY(0);
   }
@@ -59,14 +59,84 @@ article {
   }
 }
 
+@keyframes yStart {
+  from {
+    transform: translateY(50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes yAxisDown {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(50%);
+  }
+}
+
+.ascendAnimation {
+  animation: yAxisUp 2s forwards
+}
+
+.descendAnimation {
+  animation: yAxisDown 2s forwards
+}
+
 .imgContainer {
   width: 25%;
   height: 45%;
   border: 2px solid white;
   border-radius: 20px;
   color: white;
+  transition: width 1s, height 1s, background-color 1s
 }
 
-img {
-  margin: auto;
+.backToStart {
+  animation: yStart 2s forwards
+}
+
+.evenImgContainer {
+  width: 25%;
+  height: 45%;
+  border: 2px solid white;
+  border-radius: 20px;
+  color: white;
+  transform: translateY(100%);
+}
+
+.imgContainer img {
+  margin: 5px auto;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.imgContainer ul {
+  display: none
+}
+
+footer {
+  background: linear-gradient(#660033, #333366);
+  width: 100%;
+  height: 20%;
+}
+
+h2 {
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-family: 'Tangerine', cursive;
+  font-size: 3em
+}
+
+.active {
+  width: 80%;
+  height: 80%;
+  background-color: black
+}
+
+.active ul {
+  display: block
 }
