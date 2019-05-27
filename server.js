@@ -2,9 +2,11 @@ const req = require('request');
 const scrap = require('cheerio');
 let fs = require('fs');
 let list;
+let splitList;
 
-req('https://www.starbucks.com/menu/drinks/frappuccino-blended-beverages', (err, res, body) => {
+req('https://www.coffeebean.com/cafe-menu/item/ice-blended', (err, res, body) => {
   let parse = scrap.load(body);
-  list = parse('ol li span');
-  console.log(list)
+  list = parse('#edit-field-flavors-target-id option');
+  splitList = list.text()
+  console.log(splitList.split(' '))
 })

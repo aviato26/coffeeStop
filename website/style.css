@@ -5,138 +5,267 @@ html {
   width: 100%
 }
 
-#cutoutCup {
-  margin: auto;
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 100vh;
-}
-
-#backPic {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-h1{
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  font-family: 'Tangerine', cursive;
-  font-size: 4em;
-  border: 2px solid white;
-  width: 15%
-}
-
-#menu {
-  width:100%;
-  height: 100%;
-  z-index: 3;
-  position: relative;
-  background: linear-gradient(#333366, #660033);
-}
-
-#menu-container {
-  width: 100%;
-  height: 90%;
-  display: flex;
-  justify-content: space-around;
-}
-
-article {
-  text-align: center;
-}
-
-@keyframes yAxisUp {
-  from {
-    transform: translateY(0);
+  body{
+    background: repeating-linear-gradient(-10deg, #cb9866, #cb9866 3px, black 20%);
+    color: white;
+    text-align: center;
   }
-  to {
-    transform: translateY(50%);
-  }
-}
 
-@keyframes yStart {
-  from {
-    transform: translateY(50%);
+  #cutoutCup {
+    display: none;
   }
-  to {
-    transform: translateY(0);
-  }
-}
 
-@keyframes yAxisDown {
-  from {
+  #backPic {
+    display: none
+  }
+
+  #cover {
+    background: black;
+  }
+
+  #mobile-img {
+    height: 100%
+  }
+
+  img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px black
+  }
+
+  #menu {
+    width: 100%;
+    margin: 5% 0;
+  }
+
+  #menu-container {
+    width: 100%
+  }
+
+  section {
+    width: 100%
+  }
+
+  h1 {
+    font-family: 'Tangerine', cursive;
+    font-size: 3em;
+    margin: 0 auto 10% auto;
+    border-bottom: 3px solid white;
+    width: 30%;
+  }
+
+  h3 {
+    font-family: 'Tangerine', cursive;
+    font-size: 2.5em;
+    text-decoration: underline;
+  }
+
+  h4 {
+    font-family: cursive;
+    font-size: 1.3em
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    font-family: fantasy;
+  }
+
+  footer h2 {
+    width: 40%;
+    margin: auto;
+    border: 3px solid white;
+    font-family: 'Tangerine', cursive;
+    font-size: 2em;
+  }
+
+/*
+  laptop layout
+*/
+
+@media only screen and (min-width: 800px) {
+
+  body {
+    background: white;
+    overflow-x: hidden;
+  }
+
+  img {
+    border-radius: 0;
+    box-shadow: 0 0 0
+  }
+
+  #cutoutCup {
+    display: block;
+    margin: auto;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+  }
+
+  #backPic {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  #mobile-img {
+    display: none
+  }
+
+  h1{
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-family: 'Tangerine', cursive;
+    font-size: 4em;
+    border: 2px solid white;
+    width: 15%
+  }
+
+  #menu {
+    margin: 0;
+    width:100%;
+    height: 100%;
+    z-index: 3;
+    position: relative;
+    background: linear-gradient(#333366, #660033);
+    padding-top: 5%
+  }
+
+  #menu-container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  article {
+    text-align: center;
+  }
+
+  @keyframes yAxisUp {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(50%);
+    }
+  }
+
+  @keyframes yStart {
+    from {
+      transform: translateY(50%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes yAxisDown {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(50%);
+    }
+  }
+
+  .ascendAnimation {
+    animation: yAxisUp 2s forwards
+  }
+
+  .descendAnimation {
+    animation: yAxisDown 2s forwards
+  }
+
+  .imgContainer {
+    width: 25%;
+    height: 45%;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    transition: width 1s, height 1s, background-color 1s
+  }
+
+  .backToStart {
+    animation: yStart 2s forwards
+  }
+
+  .evenImgContainer {
+    width: 25%;
+    height: 45%;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
     transform: translateY(100%);
   }
-  to {
-    transform: translateY(50%);
+
+  .imgContainer img {
+    margin: 5px auto;
+    width: 50%;
+    border-radius: 5px;
+    transition: width .4s;
+    box-shadow: 0px 0px 0px
   }
-}
 
-.ascendAnimation {
-  animation: yAxisUp 2s forwards
-}
+  .imgContainer ul {
+    display: none
+  }
 
-.descendAnimation {
-  animation: yAxisDown 2s forwards
-}
+  footer {
+    background: linear-gradient(#660033, #333366);
+    width: 100%;
+    height: 20%;
+  }
 
-.imgContainer {
-  width: 25%;
-  height: 45%;
-  border: 2px solid white;
-  border-radius: 20px;
-  color: white;
-  transition: width 1s, height 1s, background-color 1s
-}
+  h2 {
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-family: 'Tangerine', cursive;
+    font-size: 3em
+  }
 
-.backToStart {
-  animation: yStart 2s forwards
-}
+  h3 {
+    font-family: 'Tangerine', cursive;
+    font-size: 2em;
+    text-decoration: underline;
+  }
 
-.evenImgContainer {
-  width: 25%;
-  height: 45%;
-  border: 2px solid white;
-  border-radius: 20px;
-  color: white;
-  transform: translateY(100%);
-}
+  .active {
+    width: 80%;
+    height: 70%;
+    background-color: #333366;
+  }
 
-.imgContainer img {
-  margin: 5px auto;
-  width: 50%;
-  border-radius: 5px;
-}
+  .active ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    font-family: fantasy;
+  }
 
-.imgContainer ul {
-  display: none
-}
+  .active li {
+    margin: 2%;
+    width: 25%
+  }
 
-footer {
-  background: linear-gradient(#660033, #333366);
-  width: 100%;
-  height: 20%;
-}
+  .active span {
+    display: block
+  }
 
-h2 {
-  margin: 0;
-  color: white;
-  text-align: center;
-  font-family: 'Tangerine', cursive;
-  font-size: 3em
-}
+  .active img {
+    width: 25%
+  }
 
-.active {
-  width: 80%;
-  height: 80%;
-  background-color: black
-}
-
-.active ul {
-  display: block
+  footer h2 {
+    width: 15%
+  }
 }
